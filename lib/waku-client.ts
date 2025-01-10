@@ -56,4 +56,16 @@ export class WakuClient {
 
     return json;
   }
+
+  public async getPeers() {
+    const response = await fetch(`${this.baseUrl}/admin/v1/peers`);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const json = await response.json();
+
+    return json;
+  }
 }
