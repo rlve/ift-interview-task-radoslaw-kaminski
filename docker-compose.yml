@@ -9,7 +9,7 @@ services:
       - '21164:21164'
       - '21165:21165'
     volumes:
-      - ./run-node-1.sh:/opt/run_node.sh:Z
+      - ./scripts/run-node-1.sh:/opt/run_node.sh:Z
     entrypoint: sh
     command:
       - /opt/run_node.sh
@@ -27,7 +27,7 @@ services:
       - '21174:21164'
       - '21175:21165'
     volumes:
-      - ./run-node-2.sh:/opt/run_node.sh:Z
+      - ./scripts/run-node-2.sh:/opt/run_node.sh:Z
     entrypoint: sh
     command:
       - /opt/run_node.sh
