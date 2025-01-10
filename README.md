@@ -38,7 +38,7 @@ For simplicity, all URLs and IP addresses are hardcoded.
 
 ### Tests
 
-Tests are organized within the `./tests/` directory, including two main test suites:
+Tests are organized within the `./tests/` directory, including two test suites:
 
 - `basic.test.ts` - Test Suite 1 (Basic Node Operation)
 - `inter-node.test.ts` - Test Suite 2 (Inter-Node Communication).
@@ -59,5 +59,5 @@ Tests are organized within the `./tests/` directory, including two main test sui
 
 ### GitHub Actions
 
-Tests are integrated with GitHub Actions, allowing execution via pull requests or on-demand workflows. You can find the
-workflow configuration [here](https://github.com/rlve/ift-interview-task-radoslaw-kaminski/actions/workflows/tests.yml).
+Tests are integrated with GitHub Actions, allowing execution via pull requests or on-demand. You can find the workflow
+runs [here](https://github.com/rlve/ift-interview-task-radoslaw-kaminski/actions/workflows/tests.yml).
