@@ -13,8 +13,11 @@ jobs:
       - name: Starting Waku Nodes
         run: docker compose -f docker-compose.yml up -d --build
 
+      - name: Building Tests
+        run: docker compose -f docker-compose-tests.yml build
+
       - name: Starting Tests
-        run: docker compose -f docker-compose-tests.yml up --build
+        run: docker compose -f docker-compose-tests.yml up
 
       - name: Teardown
         run: |
