@@ -2,6 +2,7 @@ name: Waku Nodes Tests
 on:
   pull_request:
     branches: [main, master]
+  workflow_dispatch:
 
 jobs:
   tests:
