@@ -2,7 +2,7 @@ import { describe, expect, test } from 'bun:test';
 import { WakuClient } from '../lib/waku-client';
 
 describe('Basic Node Operation', () => {
-  const wakuClient = new WakuClient('http://0.0.0.0:21161');
+  const wakuClient = new WakuClient('http://nwaku1:21161');
   const topic = '/my-app/2/chatroom-1/proto';
   const payload = 'UmVsYXkgd29ya3MhIQ==';
 

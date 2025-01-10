@@ -1,0 +1,11 @@
+services:
+  tests:
+    build:
+      context: .
+    container_name: tests
+    networks:
+      - ift-interview-task-radoslaw-kaminski_waku
+
+networks:
+  ift-interview-task-radoslaw-kaminski_waku:
+    external: true

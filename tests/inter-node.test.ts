@@ -3,8 +3,8 @@ import { beforeAll, describe, expect, test } from 'bun:test';
 import { retry } from 'ts-retry-promise';
 
 describe('Inter-Node Communication', () => {
-  const wakuClient1 = new WakuClient('http://0.0.0.0:21161');
-  const wakuClient2 = new WakuClient('http://0.0.0.0:21171');
+  const wakuClient1 = new WakuClient('http://nwaku1:21161');
+  const wakuClient2 = new WakuClient('http://nwaku2:21161');
   const topic = '/my-app/2/chatroom-2/proto';
   const payload = 'UmVsYXkgd29ya3MhIQ==';
 
@@ -22,13 +22,17 @@ describe('Inter-Node Communication', () => {
         expect(node1Peers).toBeArrayOfSize(1);
         expect(node1Peers[0].multiaddr).toContain(wakuNode2IP);
 
+        console.log(`Connected: ${node1Peers[0].multiaddr}`);
+
         console.log('Verifying Node 2 peers...');
         const node2Peers = await wakuClient2.getPeers();
 
         expect(node2Peers).toBeArrayOfSize(1);
         expect(node2Peers[0].multiaddr).toContain(wakuNode1IP);
+
+        console.log(`Connected: ${node2Peers[0].multiaddr}`);
       },
-      { retries: 10, delay: 3000 }
+      { retries: 20, delay: 3000 }
     );
   });
 
