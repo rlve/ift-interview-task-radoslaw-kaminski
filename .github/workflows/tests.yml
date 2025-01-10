@@ -1,0 +1,12 @@
+name: Waku Nodes Tests
+on:
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  tests:
+    name: tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./run-tests.sh
