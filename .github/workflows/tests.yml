@@ -9,4 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: ./scripts/run-tests.sh
+
+      - name: Starting Waku Nodes
+        run: docker compose -f docker-compose.yml up -d --build
+
+      - name: Starting Tests
+        run: docker compose -f docker-compose-tests.yml up --build
+
+      - name: Teardown
+        run: |
+          docker compose -f docker-compose-tests.yml down
+          docker compose -f docker-compose.yml down
